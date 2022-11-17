@@ -58,7 +58,7 @@ class MybatisTestApplicationTests {
     }
 
     @Autowired
-    private IUserService userService;
+    private IUserService userservice;
 
     @Test
     public void testMPService(){
@@ -67,6 +67,6 @@ class MybatisTestApplicationTests {
         user.setPassword("测试");
         user.setAge(666);
         user.setTel("测试");
-        userService.save(user);
+        userservice.save(user);
     }
 }

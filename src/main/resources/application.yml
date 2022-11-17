@@ -15,3 +15,5 @@ mybatis-plus:
     logic-delete-value: 1
     logic-not-delete-value: 0
     banner: false
+server:
+  port: 80

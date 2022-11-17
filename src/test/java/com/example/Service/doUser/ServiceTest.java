@@ -7,16 +7,17 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
 public class ServiceTest {
+
     @Autowired
-    private IUserService userService;
+    private IUserService userservice;
 
     @Test
-    public void testMPService(){
+    void testMPService(){
         User user=new User();
         user.setName("测试");
         user.setPassword("测试");
         user.setAge(666);
         user.setTel("测试");
-        userService.save(user);
+        userservice.save(user);
     }
 }
