@@ -10,7 +10,7 @@ import lombok.Data;
 @TableName("table_user")
 public class User extends User_front{
 
-    @TableId(type = IdType.ASSIGN_ID)
+    @TableId(type = IdType.AUTO)
     private Long id;//利用雪花算法自动生成id
 
     private String name;
