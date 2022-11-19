@@ -6,7 +6,7 @@ import lombok.Data;
 public class R {
     private Boolean flag;
     private Object Data;
-
+    private String message;
 
     public R(){}
 
@@ -17,5 +17,10 @@ public class R {
     public R(Boolean flag,Object Data){
         this.Data=Data;
         this.flag=flag;
+    }
+
+    public R(String message){
+        this.flag=false;
+        this.message=message;
     }
 }

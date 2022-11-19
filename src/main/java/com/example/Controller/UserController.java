@@ -15,7 +15,8 @@ public class UserController {
 
     @PostMapping
     public R save(@RequestBody User user){
-        return new R(userService.save(user));
+        boolean flag=userService.save(user);
+        return new R(flag,flag?"添加成功":"添加失败");
     }
 
     @GetMapping
@@ -30,9 +31,15 @@ public class UserController {
         return r;
     }
 
+    @GetMapping("{str}")
+    public R GetInfoLikeByname(@PathVariable String str){
+        return new R(true,userService.getInfoLikeByName(str));
+    }
+
     @DeleteMapping("{id}")
     public R DeleteById(@PathVariable Long id){
-        return new R(userService.removeById(id));
+        boolean flag;
+        return new R(flag=userService.removeById(id),flag?"删除成功":"删除失败");
     }
 
     @PutMapping

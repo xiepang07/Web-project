@@ -4,7 +4,11 @@ package com.example.Dao.sqlMapper;
 import com.example.domain.User;
 import com.example.domain.User_front;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Component;
 
+import java.util.List;
+
+@Component
 public interface UserMapper {
 
     User selectUserById(@Param("id")long id);
@@ -16,4 +20,6 @@ public interface UserMapper {
     User_front selectUserFrontById(@Param("id") long id);
 
     User_front selectUserFrontByName(@Param("name") String name);
+
+    List<User> selectArrLikeByName(@Param("names")String[] names);
 }

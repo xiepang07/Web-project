@@ -23,4 +23,5 @@
         <!--sql映射文件-->
         <mapper resource="com/example/Dao/sqlMapper/UserMapper.xml"/>
     </mappers>
+
 </configuration>

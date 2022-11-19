@@ -14,6 +14,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.List;
 
 @SpringBootTest
 class MybatisTestApplicationTests {
@@ -47,12 +48,15 @@ class MybatisTestApplicationTests {
 
         UserMapper userMapper=session.getMapper(UserMapper.class);
 
-        User user1=userMapper.selectUserById(2);
-//        System.out.println(user1);
-        User user2=userMapper.selectUserByName("陈志贤");
-//        System.out.println(user2);
-        User user3=userMapper.selectUserLikeByName("%志%");
-        System.out.println(user3);
+//        User user1=userMapper.selectUserById(2);
+////        System.out.println(user1);
+//        User user2=userMapper.selectUserByName("陈志贤");
+////        System.out.println(user2);
+//        User user3=userMapper.selectUserLikeByName("%志%");
+//        System.out.println(user3);
+        String[] names={"%谢%", "%玉%"};
+        List<User> users=userMapper.selectArrLikeByName(names);
+        System.out.println(users);
         session.close();
     }
 

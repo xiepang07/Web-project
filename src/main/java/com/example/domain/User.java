@@ -1,9 +1,6 @@
 package com.example.domain;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.annotation.*;
 import lombok.Data;
 
 @Data
@@ -22,7 +19,9 @@ public class User extends User_front{
 
     private String tel;
 
-    private Integer deleted;//逻辑删除设置已在配置文件中设置
+    @TableLogic(value = "0",delval = "1")
+    private Integer deleted;
 
+    @Version
     private Integer version;
 }
