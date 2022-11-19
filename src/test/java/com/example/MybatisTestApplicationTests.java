@@ -36,17 +36,21 @@ class MybatisTestApplicationTests {
 //        userfrontdao.insert(user);
 //    }
 //
+
+    @Autowired
+    UserMapper userMapper;
+
     @Test
     void Testm()throws IOException {
-        String resource = "Mybatis-Config.xml";
-
-        InputStream inputStream = Resources.getResourceAsStream(resource);
-
-        SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
-
-        SqlSession session=sqlSessionFactory.openSession(true);
-
-        UserMapper userMapper=session.getMapper(UserMapper.class);
+//        String resource = "Mybatis-Config.xml";
+//
+//        InputStream inputStream = Resources.getResourceAsStream(resource);
+//
+//        SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+//
+//        SqlSession session=sqlSessionFactory.openSession(true);
+//
+//        UserMapper userMapper=session.getMapper(UserMapper.class);
 
 //        User user1=userMapper.selectUserById(2);
 ////        System.out.println(user1);
@@ -57,7 +61,7 @@ class MybatisTestApplicationTests {
         String[] names={"%谢%", "%玉%"};
         List<User> users=userMapper.selectArrLikeByName(names);
         System.out.println(users);
-        session.close();
+//        session.close();
     }
 
     @Autowired

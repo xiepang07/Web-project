@@ -7,6 +7,7 @@ import com.example.domain.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Arrays;
 import java.util.List;
 
 @Service
@@ -24,10 +25,10 @@ public class UserService  extends ServiceImpl<UserMP, User> implements IUserServ
     }
 
     public List<User> getInfoLikeByName(String str){
-        String[] names=str.split(" ");
-        for (String name:
-             names) {
-            name="%"+name+"%";
+        System.out.println(str);
+        String[] names=str.split("\\s+");
+        for (int i=0;i<names.length;i++){
+            names[i]="%"+names[i]+"%";
         }
         List<User> userList=userMapper.selectArrLikeByName(names);
         return userList;

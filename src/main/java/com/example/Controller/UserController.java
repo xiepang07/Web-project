@@ -31,8 +31,8 @@ public class UserController {
         return r;
     }
 
-    @GetMapping("{str}")
-    public R GetInfoLikeByname(@PathVariable String str){
+    @PostMapping("/search")
+    public R GetInfoLikeByname(@RequestBody String str){
         return new R(true,userService.getInfoLikeByName(str));
     }
 

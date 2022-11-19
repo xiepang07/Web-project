@@ -40,7 +40,7 @@
         select *
         from table_user
         <where>
-            1 = 1
+            deleted = 0
             <foreach collection="names" item="name">
                 and name like #{name}
             </foreach>
