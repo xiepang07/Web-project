@@ -1,4 +1,4 @@
-package com.example.Dao;
+package com.example.Dao.MP;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.example.domain.User;
