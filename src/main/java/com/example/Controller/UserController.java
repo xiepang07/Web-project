@@ -20,10 +20,6 @@ public class UserController {
 
     @PostMapping
     public R save(@RequestBody User user){
-        log.debug("debug...");
-        log.info("info...");
-        log.error("error...");
-        log.warn("warn...");
         boolean flag=userService.save(user);
         return new R(flag,flag?"添加成功":"添加失败");
     }
