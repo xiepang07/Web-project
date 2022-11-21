@@ -3,6 +3,8 @@ package com.example.Controller;
 import com.example.Controller.utils.R;
 import com.example.Service.doUser.IUserService;
 import com.example.domain.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,11 +12,18 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/users")
 public class UserController {
 
+    //创建记录日志的对象
+    private static final Logger log = LoggerFactory.getLogger(UserController.class);
+
     @Autowired
     private IUserService userService;
 
     @PostMapping
     public R save(@RequestBody User user){
+        log.debug("debug...");
+        log.info("info...");
+        log.error("error...");
+        log.warn("warn...");
         boolean flag=userService.save(user);
         return new R(flag,flag?"添加成功":"添加失败");
     }
